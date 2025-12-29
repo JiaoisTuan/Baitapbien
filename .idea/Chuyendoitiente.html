@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ </title>
+</head>
+<body>
+<table>
+    <tr>
+    <th>Amout</th>
+    <th>From Currency</th>
+    <th> To Currency</th>
+    </tr>
+    <tr>
+        <td> <input type="Number" id="amount" value="1"> </td>
+        <td> <select id="from">
+            <option value="USD"> USD</option>
+            <option value="VND"> VND</option>
+        </select>
+        </td>
+        <td> <select id="to">
+            <option value="VND"> VND </option>
+            <option value="USD"> USD </option>
+        </select>
+        </td>
+        <td><input type="button"onclick="Convert()" value="Convert"></td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    function Convert() {
+        let amout = Number(document.getElementById('amount').value);
+        let to = (document.getElementById('to').value);
+        let from = (document.getElementById('from').value);
+        let rate = 1;
+        if (from === "USD" && to === "VND") {
+            rate = 26.000
+        } else if (from === "VND" && to === "USD") {
+            rate = 1 / 26.00;
+        } else {
+            rate = 1
+        }
+
+        let result = amout * rate;
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>

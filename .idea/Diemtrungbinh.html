@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm  trung bình</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let Vatly=parseInt(prompt("Nhập vào điểm vật lý của bạn :"))
+    let Hoahoc=parseInt(prompt("Nhập vào điểm hóa học của bạn :"))
+    let sinhhoc=parseInt(prompt("Nhập vào điểm sinh học của bạn :"))
+   let result = (sinhhoc + Vatly + Hoahoc) / 3
+    document.getElementById("result").innerHTML =
+        "điểm trung bình của bạn là "+  result;
+
+
+</script>
+
+</body>
+</html>
